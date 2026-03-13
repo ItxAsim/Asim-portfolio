@@ -6,7 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Software Engineer with a BS in Computer Science, skilled in mobile
+          Senior Software Engineer with a BS in Computer Science, skilled in mobile
           app development using React Native and Flutter, and experienced in
           backend development with Strapi. I have worked on AI-powered
           applications, API integrations, and published multiple apps on the Apple

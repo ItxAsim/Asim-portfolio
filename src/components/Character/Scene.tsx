@@ -73,6 +73,8 @@ const Scene = () => {
             handleResize(renderer, camera, canvasDiv, character)
           );
         }
+      }).catch(() => {
+        progress.clear();
       });
 
       let mouse = { x: 0, y: 0 },

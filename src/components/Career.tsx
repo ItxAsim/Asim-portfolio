@@ -28,10 +28,10 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Associate Software Engineer</h4>
+                <h4>Senior Software Engineer</h4>
                 <h5>MetaViz, Lahore</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>SEP 2024 - NOW</h3>
             </div>
             <p>
               Developing cross-platform mobile apps using React Native & Flutter.
