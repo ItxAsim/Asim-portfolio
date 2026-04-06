@@ -6,16 +6,21 @@ export function setCharTimeline(
   camera: THREE.PerspectiveCamera
 ) {
   let intensity: number = 0;
-  setInterval(() => {
-    intensity = Math.random();
-  }, 200);
+  let lastFlicker = 0;
+  gsap.ticker.add((time: number) => {
+    if (time - lastFlicker > 0.2) {
+      intensity = Math.random();
+      lastFlicker = time;
+    }
+  });
   const tl1 = gsap.timeline({
     scrollTrigger: {
       trigger: ".landing-section",
       start: "top top",
       end: "bottom top",
-      scrub: true,
+      scrub: 1.5,
       invalidateOnRefresh: true,
+      fastScrollEnd: true,
     },
   });
   const tl2 = gsap.timeline({
@@ -23,8 +28,9 @@ export function setCharTimeline(
       trigger: ".about-section",
       start: "center 55%",
       end: "bottom top",
-      scrub: true,
+      scrub: 1.5,
       invalidateOnRefresh: true,
+      fastScrollEnd: true,
     },
   });
   const tl3 = gsap.timeline({
@@ -32,8 +38,9 @@ export function setCharTimeline(
       trigger: ".whatIDO",
       start: "top top",
       end: "bottom top",
-      scrub: true,
+      scrub: 1.5,
       invalidateOnRefresh: true,
+      fastScrollEnd: true,
     },
   });
   let screenLight: any, monitor: any;
@@ -138,8 +145,9 @@ export function setAllTimeline() {
       trigger: ".career-section",
       start: "top 30%",
       end: "100% center",
-      scrub: true,
+      scrub: 1.5,
       invalidateOnRefresh: true,
+      fastScrollEnd: true,
     },
   });
   careerTimeline

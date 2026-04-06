@@ -100,6 +100,20 @@ img {
   backface-visibility: hidden;
 }
 
+.about-section,
+.career-section,
+.work-section,
+.whatIDO,
+.contact-section,
+.techstack {
+  contain: layout style paint;
+  transform: translateZ(0);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .container-main {
   width: 100%;
   margin: auto;

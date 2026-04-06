@@ -108,8 +108,22 @@ const Scene = () => {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
+      let isVisible = true;
+      const charContainer = document.querySelector(".character-container");
+      if (charContainer) {
+        const observer = new IntersectionObserver(
+          ([entry]) => { isVisible = entry.isIntersecting; },
+          { rootMargin: "200px" }
+        );
+        observer.observe(charContainer);
+      }
+
       const animate = () => {
         requestAnimationFrame(animate);
+        if (!isVisible) {
+          clock.getDelta();
+          return;
+        }
         if (headBone) {
           handleHeadRotation(
             headBone,
